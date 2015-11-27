@@ -5,19 +5,18 @@ CC=gcc
 LINK=gcc
 
 .PHONY : all
-all : test
+all : app
 
 # Link the object files into a binary
-test : test.o
-	$(LINK) -o test test.o -lstdc++ 
+app : main.o
+	$(LINK) -o app main.o -lstdc++
 
 # Compile the source files into object files
-test.o : test.cpp
-	$(CC) -c test.cpp -o test.o
+main.o : main.cpp
+	$(CC) -c main.cpp -o main.o
 
 # Clean target
 .PHONY : clean
 clean :
-	rm test.o test
+	rm main.o app
 
- 
