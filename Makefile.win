@@ -1,22 +1,21 @@
 # Specify compiler
-CC=gcc
+CC=cl.exe
 
 # Specify linker
-LINK=gcc
+LINK=link.exe
 
 .PHONY : all
 all : app
 
 # Link the object files into a binary
 app : main.o
-	$(LINK) -o app.exe main.o -lstdc++
+	$(LINK) /OUT:app.exe main.o 
 
 # Compile the source files into object files
 main.o : main.cpp
-	$(CC) -c main.cpp -o main.o
+	$(CC) /c main.cpp /Fomain.o
 
 # Clean target
-.PHONY : clean
 clean :
-	rm main.o app.exe
+	del main.o app.exe
 
