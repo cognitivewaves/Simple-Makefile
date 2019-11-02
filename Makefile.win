@@ -4,10 +4,10 @@ CC=cl.exe
 # Specify linker
 LINK=link.exe
 
-.PHONY : all
+# Build all target
 all : app
 
-# Link the object files into a binary
+# Link the object files and dependent libraries into a binary
 app : main.o
 	$(LINK) /OUT:app.exe main.o 
 

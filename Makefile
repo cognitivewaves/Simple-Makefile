@@ -4,10 +4,11 @@ CC=gcc
 # Specify linker
 LINK=gcc
 
+# Build all target
 .PHONY : all
 all : app
 
-# Link the object files into a binary
+# Link the object files and dependent libraries into a binary
 app : main.o
 	$(LINK) -o app.exe main.o -lstdc++
 
